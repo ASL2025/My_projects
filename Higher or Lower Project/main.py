@@ -1,35 +1,33 @@
-import art
-import random
 import game_data
-
-# comparison of two dictionaries with followers and save the dictionary which is correct for the next comparison
-# count score function
-# while loop
-data = random.choice(game_data.data)
-def person_info(person_data, label_type):
-
-    info = f"{label_type}: {person_data['name']}, a {person_data['description']}, from {person_data['country']}"
-    return info
+import random
+import art
 
 
+# extract data from game data for comparison
+def game_char():
+    character = random.choice(game_data.data)
+    data = f"{character['name']}, a {character['description']}, from {character['country']}"
+    return data, character['follower_count']
 
-def compare():
-    first_person = person_info(data, 'Compare A' )
-    print(first_person)
-
-
-#     compare_with = []
-#     follow_count = []
-#     comparison = True
-#     while comparison:
-#         guess = int(input("Who has more followers? Type 'A' or 'B': "))
-#         person_info(data)
-#         b = against['follower_count']
-#         if guess == a or guess == b:
+compare_A, follower_count_a = game_char()
+against_B, follower_count_b = game_char()
 #
-#
-# print(art.logo)
-# print(art.vs)
+def comparison(compare,against, guess):
+    if follower_count_a > follower_count_b and guess == 'a':
+        new_char.append(compare_A)
+        return score += 1
+    elif follower_count_a < follower_count_b and guess == 'b':
+        new_char.append(against_B)
+        return score += 1
+    else:
+        true_guess = False
 
-compare()
+
+def checking_guess():
+    score = 0
+    true_guess = True
+    while true_guess:
+        new_char = []
+        guess = input("Who has more followers? Type 'A' or 'B'."),lower()
+        comparison(compare_A, against_B, guess)
 
